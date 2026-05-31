@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面跳转 | COOJIE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            background-color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6699;
+        }
+        .search-bar {
+            width: 320px;
+            height: 32px;
+            background-color: #f5f6f7;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+        .search-bar input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13px;
+            color: #999;
+        }
+        .container {
+            margin-top: 56px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .loading-icon {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #f0f0f0;
+            border-top-color: #ff6699;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .desc {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            font-size: 15px;
+            color: #ff6699;
+            margin-bottom: 20px;
+        }
+        .jump-link {
+            font-size: 14px;
+            color: #666;
+        }
+        .jump-link a {
+            color: #ff6699;
+            text-decoration: none;
+        }
+        .jump-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">COOJIE</div>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索你感兴趣的">
+        </div>
+        <div></div>
+    </div>
+
+    <div class="container">
+        <div class="loading-icon"></div>
+        <div class="title">正在进入 COOJIE 视频站</div>
+        <div class="desc">即将为您跳转到目标页面...</div>
+        <div class="countdown" id="count">3 秒后自动跳转</div>
+        <div class="jump-link">未能自动跳转？<a href="javascript:;" id="jumpBtn">点击此处立即前往</a></div>
+    </div>
+
+    <script>
+        const targetUrl = "https://app-by24i5n3kgld.appmiaoda.com/";
+        let timeLeft = 3;
+        const countEl = document.getElementById("count");
+        const jumpBtn = document.getElementById("jumpBtn");
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            countEl.innerText = `${timeLeft} 秒后自动跳转`;
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                window.location.href = targetUrl;
+            }
+        }, 1000);
+
+        jumpBtn.addEventListener("click", () => {
+            clearInterval(timer);
+            window.location.href = targetUrl;
+        });
+    </script>
+</body>
+</html>
