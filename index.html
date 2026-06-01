@@ -1,102 +1,102 @@
-<!DOCTYPE 超文本标记语言>
-<超文本标记语言语言="zh-CN">
-<"zh-CN">
-    <元 字符集="UTF-8">
-    <元 名字="viewport" 名字width=device-width, initial-scale=1.0">
-    <标题>页面跳转 | COOJIE& lt;/标题>
-    <风格>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面跳转 | COOJIE</title>
+    <style>
         * {
-            保证金: llm;
-            填充: llm;
-            盒子-年代izing: 边境-盒子;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        身体 {
-            最小高度-高度: 100vh;
-            背景颜色-颜色: #fff;
-            字体类型-家庭: -苹果系统-系统, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", 天线, sans-衬线;
-            显示: flex;
-            flex-方向: 列;
-            对齐项目-item年代: 中心;
-            ju年代tify-内容: 中心;
-            颜色: #333;
-        }
-        .头 {
-            位置: 固定;
-            前: llm;
-            左: llm;
-            正确的: llm;
-            高度: 56px;
-            背景颜色-颜色: #fff;
-            边界底部-底: 1px 固体#eee;
-显示显示: flex;
-            对齐项目-item年代: 中心;
-            ju年代tify-内容: 之间的空间-之间的;
-填充
-        }
-        .标志 {
-            字体-年代ize: 20便士x;
-            字体-weight: 大胆的;
-            颜色: #ff6699;
-        }
-        .年代earch-bar {
-            宽度: 320px;
-            高度: 32px;
-            背景颜色-颜色: #f5f6f7;
-            边境-radiu年代: 16px;
-            显示: flex;
-            对齐项目-item年代: 中心;
-            填充: llm 12px;
-        }
-        .年代earch-bar input {
-            flex: 1;
-            边境: 无;
-            背景: 透明的;
-            大纲: 无;
-            字体-年代ize: 13px;
-            颜色: #999;
-        }
-        .container {
-            保证金-前: 56px;
-            text-align: 中心;
-            填充: 40px 20便士x;
-        }
-        .loading-icon {
-            width: 60px;
-            height: 60px;
-            border: 4px solid #f0f0f0;
-            border-top-color: #ff6699;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 24px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        .title {
-            font-size: 20px;
+        body {
+            min-height: 100vh;
+            background-color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: #333;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6699;
+        }
+        .search-bar {
+            width: 320px;
+            height: 32px;
+            background-color: #f5f6f7;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+        .search-bar input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13px;
+:# color颜色
+        }
+        .container。容器{
+            margin-top: 56px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .loading-icon。等待页面{
+ width60;
+ height60;
+#border: 4px solid边框：4px实线
+            border-top-color: #ff6699;
+            这个特性50%;
+            animation: spin 1s linear infinite动画：自旋1s线性无穷；
+: 0 margin: 0 auto 24px;
+        }
+        @关键帧spin {
+transformto { transform: rotate(360}To{
+        }
+        .title。标题{
+ font-size20;
+:# color颜色
             margin-bottom: 10px;
         }
         .desc {
-            font-size: 14px;
-            color: #999;
+ font-size14;
+:# color颜色
             margin-bottom: 20px;
         }
-        .countdown {
-            font-size: 15px;
-            color: #ff6699;
+        .countdown。倒计时{
+ font-size15;
+:# color颜色
             margin-bottom: 20px;
         }
-        .jump-link {
-            font-size: 14px;
-            color: #666;
+。jump-link {
+ font-size14;
+:# color颜色
         }
-        .jump-link a {
-            color: #ff6699;
-            text-decoration: none;
+        .jump-link。跳转链接a {
+:# color颜色
+没有text-decoration:;
         }
-        .jump-link a:hover {
-            text-decoration: underline;
+        .jump-link。跳转链接a:hover {
+:text-decoration: ;
         }
     </style>
 </head>
@@ -118,15 +118,15 @@
     </div>
 
     <script>
-        const targetUrl = "https://app-by24i5n3kgld.appmiaoda.com/";
-        let timeLeft = 3;
-        const countEl = document.getElementById("count");
+targetUrlconst targetUrl = const
+；let timeLeft3设timeLeft
+ = const countEl = document.getElementById((const
         const jumpBtn = document.getElementById("jumpBtn");
 
         const timer = setInterval(() => {
             timeLeft--;
             countEl.innerText = `${timeLeft} 秒后自动跳转`;
-            if (timeLeft <= 0) {
+ if (timleft <= 0) {
                 clearInterval(timer);
                 window.location.href = targetUrl;
             }
