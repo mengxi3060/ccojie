@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COOJIE 跳转页</title>
+    <title>COOJIE弹幕视频网</title>
     <style>
         * {
             margin: 0;
@@ -119,10 +119,8 @@
     <!-- 跳转主体 -->
     <div class="main">
         <div class="loading"></div>
-        <div class="title">正在进入 COOJIE 视频站</div>
-        <div class="tip">即将为您跳转到目标页面</div>
-        <div class="count" id="count">3 秒后自动跳转</div>
-        <button class="btn" id="jumpBtn">立即进入</button>
+        <div class="title">COOJIE 弹幕视频网</div>
+        <div class="count" id="count">页面加载中</div>
     </div>
 
     <script>
@@ -135,7 +133,7 @@
         // 自动倒计时跳转
         const timer = setInterval(() => {
             time--;
-            countDom.innerText = `${time} 秒后自动跳转`;
+            countDom.innerText = ``;
             if (time <= 0) {
                 clearInterval(timer);
                 window.location.href = target;
