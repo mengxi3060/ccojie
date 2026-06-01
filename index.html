@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOJIE 跳转页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            background: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 顶部导航栏 和你的网站完全一致 */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background: #fff;
+            border-bottom: 1px solid #eeeeee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6699;
+        }
+        .search {
+            width: 320px;
+            height: 32px;
+            background: #f5f6f7;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+        .search input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* 中间跳转区域 */
+        .main {
+            margin-top: 56px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .loading {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #f0f0f0;
+            border-top-color: #ff6699;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 24px;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        .title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .tip {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 20px;
+        }
+        .count {
+            font-size: 15px;
+            color: #ff6699;
+            margin-bottom: 28px;
+        }
+        .btn {
+            padding: 12px 42px;
+            background: #ff6699;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #ff4d88;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="nav">
+        <div class="logo">COOJIE</div>
+        <div class="search">
+            <input placeholder="搜索你感兴趣的" readonly>
+        </div>
+        <div></div>
+    </div>
+
+    <!-- 跳转主体 -->
+    <div class="main">
+        <div class="loading"></div>
+        <div class="title">正在进入 COOJIE 视频站</div>
+        <div class="tip">即将为您跳转到目标页面</div>
+        <div class="count" id="count">3 秒后自动跳转</div>
+        <button class="btn" id="jumpBtn">立即进入</button>
+    </div>
+
+    <script>
+        // 跳转目标地址
+        const target = "https://app-by24i5n3kgld.appmiaoda.com/";
+        let time = 3;
+        const countDom = document.getElementById("count");
+        const btnDom = document.getElementById("jumpBtn");
+
+        // 自动倒计时跳转
+        const timer = setInterval(() => {
+            time--;
+            countDom.innerText = `${time} 秒后自动跳转`;
+            if (time <= 0) {
+                clearInterval(timer);
+                window.location.href = target;
+            }
+        }, 1000);
+
+        // 点击按钮跳转
+        btnDom.onclick = () => {
+            clearInterval(timer);
+            window.location.href = target;
+        };
+    </script>
+</body>
+</html>
